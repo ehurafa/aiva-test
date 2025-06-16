@@ -1,7 +1,11 @@
-import { Container } from './Footer.styles.ts'
+import { Container, Copyright } from './Footer.styles'
 
 export const Footer = () => {
   return (
-    <Container>footer</Container>
+    <Container>
+      <Copyright>
+        &copy; {new Date().getFullYear()} Aiva Shop. Todos os direitos reservados.
+      </Copyright>
+    </Container>
   )
 }

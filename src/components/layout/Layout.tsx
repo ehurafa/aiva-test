@@ -1,16 +1,16 @@
 import { Container, MainContent } from './Layout.styles.ts'
 import { Header } from './Header'
+import { Content } from '../Content'
 import { Footer } from './Footer'
 
-type LayoutProps = {
-  children: React.ReactNode
-}
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = () => {
   return (
     <Container>
       <Header />
-      <MainContent>{children}</MainContent>
+      <MainContent>
+        <Content />
+      </MainContent>
       <Footer />
     </Container>
   )
