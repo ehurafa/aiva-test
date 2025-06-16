@@ -1,9 +1,10 @@
+import type { FC } from 'react'
 import { Outlet } from "react-router-dom"
 import { Container } from './Layout.styles.ts'
 import { Header } from './Header'
 import { Footer } from './Footer'
 
-export default function Layout() {
+export const Layout: FC = () => {
   return (
     <Container>
       <Header />

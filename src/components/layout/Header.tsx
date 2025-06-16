@@ -1,7 +1,8 @@
+import type { FC } from 'react'
 import { Container, Logo, SearchInput, NavIcons } from './Header.styles';
 import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
 
-export const Header = () => {
+export const Header: FC = () => {
   return (
     <Container>
       <Logo>Aiva Shop</Logo>

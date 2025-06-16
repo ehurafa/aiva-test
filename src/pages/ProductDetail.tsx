@@ -1,6 +1,7 @@
+import type { FC } from 'react'
 import { useParams } from "react-router-dom";
 
-export default function ProductDetail() {
+export const ProductDetail: FC = () => {
   const { productId } = useParams();
   return <div>🛍️ Detalhes do Produto: {productId}</div>;
 }

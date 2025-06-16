@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "../components/layout/Layout"
-import Home from "../pages/Home"
-import Category from "../pages/Category"
-import ProductDetail from "../pages/ProductDetail"
-import Login from "../pages/Login"
-import Register from "../pages/Register"
+import { Layout } from "../components/layout/Layout"
+import { Home } from "../pages/Home"
+import { Category } from "../pages/Category"
+import { ProductDetail } from "../pages/ProductDetail"
+import { Login } from "../pages/Login"
+import { Register } from "../pages/Register"
 
 export default function AppRouter() {
   return (

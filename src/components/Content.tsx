@@ -1,7 +1,8 @@
+import type { FC } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Container, Grid, Detail, CategoryHeader } from './Content.styles'
 
-export const Content = () => {
+export const Content: FC = () => {
   const location = useLocation()
 
   if (location.pathname === '/detalhes') {
