@@ -1,16 +1,15 @@
-import { Container, MainContent } from './Layout.styles.ts'
+import { Outlet } from "react-router-dom"
+import { Container } from './Layout.styles.ts'
 import { Header } from './Header'
-import { Content } from '../Content'
 import { Footer } from './Footer'
 
-
-export const Layout = () => {
+export default function Layout() {
   return (
     <Container>
       <Header />
-      <MainContent>
-        <Content />
-      </MainContent>
+      <main style={{ minHeight: "80vh", padding: "1rem" }}>
+        <Outlet />
+      </main>
       <Footer />
     </Container>
   )
