@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useCartAndFavoritesStore } from '../store/useCartAndFavoritesStore'
 import type { Product } from '../types/Product'
-import { Card, Image, Title, Price, Actions, Button } from './ProductCard.styles'
+import { Card, Image, Title, Price, Actions, Button, CardLink } from './ProductCard.styles'
 
 type ProductCardProps = {
   product: Product;
@@ -21,10 +22,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <Card>
-      <Image src={product?.images[0]} alt={product.title} />
-
-      <Title>{product.title}</Title>
-      <Price>R$ {product.price.toFixed(2)}</Price>
+      <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <CardLink>
+          <Image src={product.images[0]} alt={product.title} />
+          <Title>{product.title}</Title>
+          <Price>R$ {product.price.toFixed(2)}</Price>
+        </CardLink>
+      </Link>
 
       <Actions>
         {showFavorite && (

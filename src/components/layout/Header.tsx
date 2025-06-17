@@ -15,11 +15,11 @@ export const Header: FC = () => {
 
       <MenuWrapper>
         <NavMenu>
-          <NavLink href="/categoria/1">Clothes</NavLink>
-          <NavLink href="/categoria/2">Electronics</NavLink>
-          <NavLink href="/categoria/4">Shoes</NavLink>
-          <NavLink href="/categoria/5">Miscellaneous</NavLink>
-          <NavLink href="/categoria/22">Figura</NavLink>
+          <NavLink href="/category/1">Clothes</NavLink>
+          <NavLink href="/category/2">Electronics</NavLink>
+          <NavLink href="/category/4">Shoes</NavLink>
+          <NavLink href="/category/5">Miscellaneous</NavLink>
+          <NavLink href="/category/22">Figura</NavLink>
         </NavMenu>
 
          <NavIcons>

@@ -4,10 +4,12 @@ import type { Product } from '../types/Product'
 
 type ProductStore = {
   products: Product[];
+  cart: Product[];
   isLoading: boolean;
   error: string | null;
   fetchProducts: (limit?: number, offset?: number) => Promise<void>;
   setCategory: (category: string) => Promise<void>;
+  addToCart: (product: Product) => void;
 }
 
 const PRODUCTS_PER_PAGE = 20
@@ -15,6 +17,7 @@ const PRODUCTS_PER_PAGE = 20
 export const useProductStore = create<ProductStore>((set) => ({
   products: [],
   currentCategoryId: '',
+  cart: [],
 
   isLoading: false,
   error: null,
@@ -38,4 +41,9 @@ export const useProductStore = create<ProductStore>((set) => ({
       set({ error: 'Erro ao carregar produtos da categoria', isLoading: false });
     }
   },
+
+  addToCart: (product: Product) =>
+    set((state) => ({
+      cart: [...state.cart, product],
+    })),
 }))

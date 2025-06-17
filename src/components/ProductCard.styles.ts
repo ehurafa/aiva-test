@@ -2,7 +2,8 @@ import { styled, theme } from '../styles/stitches.config';
 
 
 export const Card = styled('div', {
-  border: '1px solid',
+  borderWidth: '1px',
+  borderStyle: 'solid',
   borderColor:  theme.colors.lightGray,
   borderRadius: '8px',
   padding: '1rem',
@@ -15,6 +16,16 @@ export const Card = styled('div', {
   transition: 'transform 0.2s ease-in-out',
   '&:hover': {
     transform: 'scale(1.01)',
+  },
+});
+
+export const CardLink = styled('div', {
+  width: '100%',
+  textAlign: 'center',
+  textDecoration: 'none',
+  color: 'inherit',
+  '&:hover': {
+    cursor: 'pointer',
   },
 });
 
