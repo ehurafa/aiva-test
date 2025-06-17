@@ -8,6 +8,7 @@ export const { styled, css, theme, globalCss } = createStitches({
       softBlack: '#222222',
       lightGray: '#E6E9EC',
       purpleHighlight: '#820AD1CC',
+      error: '#ff0000',
     },
     fonts: {
       primary: 'Inter, sans-serif',

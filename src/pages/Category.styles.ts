@@ -17,26 +17,3 @@ export const ProductGrid = styled('div', {
     gridTemplateColumns: '1fr',
   },
 });
-
-export const ProductCard = styled('div', {
-  border: '1px solid #ddd',
-  borderRadius: '8px',
-  padding: '1rem',
-  textAlign: 'center',
-
-  img: {
-    width: '100%',
-    height: 'auto',
-    borderRadius: '4px',
-  },
-
-  h3: {
-    margin: '0.5rem 0',
-    fontSize: '1.2rem',
-  },
-
-  p: {
-    color: '#007bff',
-    fontWeight: 'bold',
-  },
-});

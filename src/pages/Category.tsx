@@ -1,7 +1,8 @@
-import React, { FC, useEffect } from 'react';
-import { useProductStore } from '../store/useProductStore';
-import { useParams } from 'react-router-dom';
-import { Container, ProductGrid, ProductCard } from './Category.styles';
+import { FC, useEffect } from 'react'
+import { useProductStore } from '../store/useProductStore'
+import { useParams } from 'react-router-dom'
+import { Container, ProductGrid } from './Category.styles'
+import ProductCard from '../components/ProductCard'
 
 export const Category = () => {
   const { categoryId } = useParams<{ category: string }>();
@@ -17,11 +18,17 @@ export const Category = () => {
       <ProductGrid>
         {products.length > 0 ? (
           products.map((product) => (
-            <ProductCard key={product.id}>
-              <img src={product.images[0]} alt={product.title} />
-              <h3>{product.title}</h3>
-              <p>{`$${product.price}`}</p>
-            </ProductCard>
+           <ProductCard
+                key={product.id}
+                product={
+                  {
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    images: product.images,
+                  }
+              }>
+              </ProductCard>
           ))
         ) : (
           <p>No products available.</p>
