@@ -1,6 +1,6 @@
-import { create } from 'zustand';
-import axios from 'axios';
-import type { Product } from '../types/Product';
+import { create } from 'zustand'
+import { fetchProducts, fetchProductsByCategory } from '../api/products'
+import type { Product } from '../types/Product'
 
 type ProductStore = {
   products: Product[];
@@ -10,7 +10,7 @@ type ProductStore = {
   setCategory: (category: string) => Promise<void>;
 }
 
-const PRODUCS_PER_PAGE = 20
+const PRODUCTS_PER_PAGE = 20
 
 export const useProductStore = create<ProductStore>((set) => ({
   products: [],
@@ -19,10 +19,10 @@ export const useProductStore = create<ProductStore>((set) => ({
   isLoading: false,
   error: null,
 
-  fetchProducts: async (limit = PRODUCS_PER_PAGE, offset = 0) => {
+  fetchProducts: async (limit = PRODUCTS_PER_PAGE, offset = 0) => {
     set({ isLoading: true, error: null });
     try {
-      const { data } = await axios.get<Product[]>(`https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${limit}`);
+      const data = await fetchProducts(limit, offset);
       set({ products: data, isLoading: false });
     } catch (error) {
       set({ error: 'Erro ao carregar produtos', isLoading: false });
@@ -30,15 +30,12 @@ export const useProductStore = create<ProductStore>((set) => ({
   },
 
   setCategory: async (categoryId: string) => {
-    set({ currentCategoryId: categoryId });
-
+    set({ isLoading: true, error: null });
     try {
-      const response = await axios.get(
-        `https://api.escuelajs.co/api/v1/categories/${categoryId}/products?limit=${PRODUCS_PER_PAGE}&offset=1`
-      );
-      set({ products: response.data });
+      const data = await fetchProductsByCategory(categoryId);
+      set({ products: data, isLoading: false });
     } catch (error) {
-      console.error('Erro ao buscar produtos:', error);
+      set({ error: 'Erro ao carregar produtos da categoria', isLoading: false });
     }
   },
 }))

@@ -1,15 +1,13 @@
-import { FC, useEffect } from 'react';
-import { useProductStore } from '../store/useProductStore';
-import { Container, BannerSection, BannerItem, SectionTitle, ProductsGrid, ProductCard, ProductImage, ProductTitle, ProductPrice } from './Home.styles';
+import { FC, useEffect } from 'react'
+import { useProductStore } from '../store/useProductStore'
+import { Container, BannerSection, BannerItem, SectionTitle, ProductsGrid, ProductCard, ProductImage, ProductTitle, ProductPrice } from './Home.styles'
 
 export const Home: FC = () => {
-  const { products, fetchProducts, isLoading, error } = useProductStore();
+  const { products, fetchProducts, isLoading, error } = useProductStore()
 
   useEffect(() => {
-    fetchProducts()
-  }, []);
-
-  const featured = products.slice(0, 4);
+    fetchProducts(2)
+  }, [])
 
   return (
     <Container>
@@ -29,7 +27,7 @@ export const Home: FC = () => {
 
         {!isLoading && !error && (
           <ProductsGrid>
-            {featured.map((product) => (
+            {products.map((product) => (
               <ProductCard key={product.id}>
                 <ProductImage src={product.images?.[0]} alt={product.title} />
                 <ProductTitle>{product.title}</ProductTitle>
