@@ -71,33 +71,12 @@ export const HamburgerButton = styled('button', {
   },
 });
 
-export const MobileMenu = styled('div', {
-  display: 'none',
-  flexDirection: 'column',
-
-  variants: {
-    isOpen: {
-      true: {
-        display: 'flex',
-      },
-    },
-  },
-
-  '@media (max-width: 768px)': {
-    position: 'absolute',
-    top: '100%',
-    left: '0',
-    width: '100%',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    zIndex: 1000,
-  },
-});
-
-export const Logo = styled('div', {
+export const Logo = styled('a', {
   fontSize: '24px',
   fontWeight: 'bold',
   color: theme.colors.neonGreen,
   marginBottom: '8px',
+  textDecoration: 'none',
 
   '@media (min-width: 768px)': {
     marginBottom: '0',

@@ -1,4 +1,3 @@
-// Home.styles.ts (estilos com Stitches)
 import { styled } from '../styles/stitches.config';
 
 export const Container = styled('div', {

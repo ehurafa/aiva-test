@@ -1,5 +1,5 @@
 import { FC, useState  } from 'react'
-import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, HamburgerButton, MobileMenu, MenuWrapper, HeaderContent } from './Header.styles';
+import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, HamburgerButton, MenuWrapper, HeaderContent } from './Header.styles';
 import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
 
 export const Header: FC = () => {
@@ -9,17 +9,17 @@ export const Header: FC = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Logo>Aiva Shop</Logo>
+        <Logo href="/">Aiva Shop</Logo>
         <SearchInput type="text" placeholder="Buscar produtos..." />      
       </HeaderContent>      
 
       <MenuWrapper>
         <NavMenu>
-          <NavLink href="/categoria/clothes">Clothes</NavLink>
-          <NavLink href="/categoria/electronics">Electronics</NavLink>
-          <NavLink href="/categoria/figura">Figura</NavLink>
-          <NavLink href="/categoria/miscellaneous">Miscellaneous</NavLink>
-          <NavLink href="/categoria/shoes">Shoes</NavLink>
+          <NavLink href="/categoria/1">Clothes</NavLink>
+          <NavLink href="/categoria/2">Electronics</NavLink>
+          <NavLink href="/categoria/4">Shoes</NavLink>
+          <NavLink href="/categoria/5">Miscellaneous</NavLink>
+          <NavLink href="/categoria/22">Figura</NavLink>
         </NavMenu>
 
          <NavIcons>
