@@ -1,19 +1,38 @@
-import type { FC } from 'react'
-import { Container, Logo, SearchInput, NavIcons } from './Header.styles';
+import { FC, useState  } from 'react'
+import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, HamburgerButton, MobileMenu, MenuWrapper, HeaderContent } from './Header.styles';
 import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
 
 export const Header: FC = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <Container>
-      <Logo>Aiva Shop</Logo>
+    <HeaderContainer>
+      <HeaderContent>
+        <Logo>Aiva Shop</Logo>
+        <SearchInput type="text" placeholder="Buscar produtos..." />      
+      </HeaderContent>      
 
-      <SearchInput type="text" placeholder="Buscar produtos..." />
+      <MenuWrapper>
+        <NavMenu>
+          <NavLink href="/categoria/clothes">Clothes</NavLink>
+          <NavLink href="/categoria/electronics">Electronics</NavLink>
+          <NavLink href="/categoria/figura">Figura</NavLink>
+          <NavLink href="/categoria/miscellaneous">Miscellaneous</NavLink>
+          <NavLink href="/categoria/shoes">Shoes</NavLink>
+        </NavMenu>
 
-      <NavIcons>
-        <FaHeart title="Favoritos" size={20} />
-        <FaShoppingCart title="Carrinho" size={20} />
-        <FaUser title="Minha Conta" size={20} />
-      </NavIcons>
-    </Container>
+         <NavIcons>
+          <FaHeart title="Favoritos" size={20} />
+          <FaShoppingCart title="Carrinho" size={20} />
+          <FaUser title="Minha Conta" size={20} />
+        </NavIcons>
+
+        <HamburgerButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          ☰
+        </HamburgerButton>
+      </MenuWrapper>
+
+    </HeaderContainer>
   )
 }

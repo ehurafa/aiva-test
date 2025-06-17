@@ -1,12 +1,11 @@
 import { styled } from '@stitches/react';
 import { theme } from '../../styles/stitches.config'
 
-export const Container = styled('header', {
+export const HeaderContainer = styled('header', {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
-  padding: '0 16px',
-  height: '64px',
+  flexDirection: 'column',
+  padding: '8px',
   backgroundColor: theme.colors.darkGray,
   color: theme.colors.lightGray,
   flexWrap: 'wrap',
@@ -15,6 +14,82 @@ export const Container = styled('header', {
     flexDirection: 'column',
     height: 'auto',
     padding: '8px',
+  },
+});
+
+export const HeaderContent = styled('div', {
+  width: '100%',
+  justifyContent: 'space-between',
+  display: 'flex',
+  alignItems: 'center' 
+});
+
+export const MenuWrapper = styled('div', {
+  width: '100%',
+  display: 'flex',
+  padding: '12px 0 4px 0',
+  justifyContent: 'space-between',
+});
+
+export const NavMenu = styled('nav', {
+  width: '100%',
+  gap: '3rem',
+  justifyContent: 'center',
+  display: 'flex',
+
+  '@media (max-width: 768px)': {
+    flexDirection: 'column',
+    gap: '0.5rem',
+    marginLeft: '0',
+    display: 'none'
+  },
+});
+
+export const NavLink = styled('a', {
+  textDecoration: 'none',
+  color: theme.colors.lightGray,
+  fontWeight: 'bold',
+  '&:hover': {
+    color: theme.colors.neonGreen,
+  },
+
+  '@media (max-width: 768px)': {
+    fontSize: '0.9rem',
+  },
+});
+
+export const HamburgerButton = styled('button', {
+  display: 'none',
+  background: 'none',
+  border: 'none',
+  fontSize: '1.5rem',
+  cursor: 'pointer',
+  color: theme.colors.lightGray,
+
+  '@media (max-width: 768px)': {
+    display: 'block',
+  },
+});
+
+export const MobileMenu = styled('div', {
+  display: 'none',
+  flexDirection: 'column',
+
+  variants: {
+    isOpen: {
+      true: {
+        display: 'flex',
+      },
+    },
+  },
+
+  '@media (max-width: 768px)': {
+    position: 'absolute',
+    top: '100%',
+    left: '0',
+    width: '100%',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    zIndex: 1000,
   },
 });
 
@@ -31,7 +106,7 @@ export const Logo = styled('div', {
 
 export const SearchInput = styled('input', {
   flex: 1,
-  margin: '0 16px',
+  marginLeft: '16px',
   padding: '8px',
   border: `1px solid ${theme.colors.lightGray}`,
   borderRadius: '4px',
@@ -43,10 +118,6 @@ export const SearchInput = styled('input', {
     color: theme.colors.purpleHighlight,
   },
 
-  '@media (max-width: 768px)': {
-    margin: '8px 0',
-    width: '100%',
-  },
 });
 
 export const NavIcons = styled('div', {
@@ -62,7 +133,6 @@ export const NavIcons = styled('div', {
 
   '@media (max-width: 768px)': {
     justifyContent: 'center',
-    width: '100%',
     gap: '12px',
   },
 });
