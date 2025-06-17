@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { Outlet } from "react-router-dom"
-import { Container } from './Layout.styles.ts'
+import { Container } from './Layout.styles'
 import { Header } from './Header'
 import { Footer } from './Footer'
 
