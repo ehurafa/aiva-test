@@ -10,13 +10,6 @@ export const HeaderContainer = styled('header', {
   color: theme.colors.lightGray,
   flexWrap: 'wrap',
 
-  a: {
-    color: 'white',
-      '&:hover': {
-      color: theme.colors.neonGreen,
-    },
-  },
-
   '@media (max-width: 768px)': {
     flexDirection: 'column',
     height: 'auto',
@@ -84,6 +77,7 @@ export const Logo = styled('a', {
   color: theme.colors.neonGreen,
   marginBottom: '8px',
   textDecoration: 'none',
+  padding: '6px',
 
   '@media (min-width: 768px)': {
     marginBottom: '0',
@@ -116,6 +110,12 @@ export const NavIcons = styled('div', {
       color: theme.colors.neonGreen,
     },
   },
+    a: {
+    color: 'white',
+      '&:hover': {
+      color: theme.colors.neonGreen,
+    },
+  },
 
   '@media (max-width: 768px)': {
     justifyContent: 'center',
@@ -130,4 +130,11 @@ export const NavIconsCounter = styled('span', {
 export const HeaderUser = styled('div', {
  fontSize: '11px',
  marginLeft: '10px',
+
+  a: {
+  color: 'white',
+    '&:hover': {
+    color: theme.colors.neonGreen,
+  },
+},
 });

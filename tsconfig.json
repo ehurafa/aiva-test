@@ -14,8 +14,10 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "noEmit": true, // Adiciona esta linha
-    "allowJs": false // Garante que arquivos .js não sejam usados
+    "noEmit": true,
+    "allowJs": false,
+    "types": ["jest", "node"],
+    "typeRoots": ["./node_modules/@types"],
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
