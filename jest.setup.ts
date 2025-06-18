@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+
 import { TextEncoder, TextDecoder } from 'util';
 
 if (typeof global.TextEncoder === 'undefined') {
@@ -6,5 +7,5 @@ if (typeof global.TextEncoder === 'undefined') {
 }
 
 if (typeof global.TextDecoder === 'undefined') {
-  global.TextDecoder = TextDecoder;
+  global.TextDecoder = TextDecoder as unknown as typeof global.TextDecoder;
 }

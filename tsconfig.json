@@ -16,7 +16,7 @@
     "jsx": "react-jsx",
     "noEmit": true,
     "allowJs": false,
-    "types": ["jest", "node"],
+    "types": ["jest", "@testing-library/jest-dom"],
     "typeRoots": ["./node_modules/@types"],
   },
   "include": ["src/**/*"],

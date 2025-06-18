@@ -11,11 +11,9 @@ describe('Header Component', () => {
       </BrowserRouter>
     );
 
-    // Verifica se o logo está presente
     const logo = screen.getByText('Aiva Shop');
     expect(logo).toBeInTheDocument();
 
-    // Verifica os links de navegação
     const clothesLink = screen.getByText('Clothes');
     const electronicsLink = screen.getByText('Electronics');
     const shoesLink = screen.getByText('Shoes');
@@ -32,7 +30,6 @@ describe('Header Component', () => {
       </BrowserRouter>
     );
 
-    // Verifica o input de busca
     const searchInput = screen.getByPlaceholderText('Buscar produtos...');
     expect(searchInput).toBeInTheDocument();
   });
