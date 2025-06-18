@@ -10,6 +10,13 @@ export const HeaderContainer = styled('header', {
   color: theme.colors.lightGray,
   flexWrap: 'wrap',
 
+  a: {
+    color: 'white',
+      '&:hover': {
+      color: theme.colors.neonGreen,
+    },
+  },
+
   '@media (max-width: 768px)': {
     flexDirection: 'column',
     height: 'auto',

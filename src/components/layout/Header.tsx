@@ -36,14 +36,16 @@ export const Header: React.FC = () => {
           </Link>
         </NavIcons>
 
-        {user ? (
-          <HeaderUser>
+        <HeaderUser>
+          {user ? (
+            <>
               <span>Olá, {user.name}!</span>
               <button onClick={logout}>Sair</button>
-            </HeaderUser>
+            </>
           ) : (
             <a href="/login">Login</a>
           )}
+        </HeaderUser>
 
         <HamburgerButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
           ☰
