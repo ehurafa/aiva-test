@@ -115,3 +115,7 @@ export const NavIcons = styled('div', {
     gap: '12px',
   },
 });
+
+export const NavIconsCounter = styled('span', {
+ fontSize: '11px'
+});

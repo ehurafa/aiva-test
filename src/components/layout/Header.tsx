@@ -1,8 +1,11 @@
-import { FC, useState  } from 'react'
-import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, HamburgerButton, MenuWrapper, HeaderContent } from './Header.styles';
-import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
+import React, { useState  } from 'react'
+import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, HamburgerButton, MenuWrapper, HeaderContent, NavIconsCounter } from './Header.styles'
+import { useCartAndFavoritesStore } from '../../store/useCartAndFavoritesStore'
+import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa'
 
-export const Header: FC = () => {
+export const Header: React.FC = () => {
+
+  const { cart } = useCartAndFavoritesStore()
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -24,7 +27,7 @@ export const Header: FC = () => {
 
          <NavIcons>
           <FaHeart title="Favoritos" size={20} />
-          <FaShoppingCart title="Carrinho" size={20} />
+          <FaShoppingCart title="Carrinho" size={20} /> <NavIconsCounter>{cart.length}</NavIconsCounter>
           <FaUser title="Minha Conta" size={20} />
         </NavIcons>
 

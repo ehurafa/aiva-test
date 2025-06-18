@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import { useParams } from "react-router-dom"
-import { useProductStore } from '../store/useProductStore';
+import { useProductStore } from '../store/useProductStore'
+import { useCartAndFavoritesStore } from '../store/useCartAndFavoritesStore'
 import {
   Container,
   Image,
@@ -18,6 +19,14 @@ export const ProductDetails: FC = () => {
       state.products.find((product) => product.id === Number(productId))
     )
 
+    const { addToCart} = useCartAndFavoritesStore();
+
+    const handleAddToCart = () => {
+      if(product) {
+        addToCart(product)
+      }
+    }
+
     if (!product) {
       return <p>Produto não encontrado</p>;
     }
@@ -30,9 +39,7 @@ export const ProductDetails: FC = () => {
         <Price>R$ {product.price.toFixed(2)}</Price>
         <Description>{product.description}</Description>
         <Button
-          onClick={() => {
-            useProductStore.getState().addToCart(product);
-          }}
+          onClick={() => {handleAddToCart()}}
         >
           Adicionar ao carrinho
         </Button>

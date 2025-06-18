@@ -18,6 +18,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const { addToCart, addToFavorites, removeFromFavorites, favorites } =
     useCartAndFavoritesStore();
 
+  const handleAddToCart = () => {
+    addToCart(product)
+  }
+
   const isFavorite = favorites.some((fav) => fav.id === product.id);
 
   return (
@@ -43,7 +47,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         )}
 
         {showAddToCart && (
-          <Button variant="cart" onClick={() => addToCart(product)}>
+          <Button variant="cart" onClick={() => handleAddToCart()}>
             Adicionar ao Carrinho
           </Button>
         )}
