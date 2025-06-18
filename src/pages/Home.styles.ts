@@ -9,14 +9,13 @@ export const BannerSection = styled('section', {
 });
 
 export const BannerItem = styled('div', {
-  width: '300px',
-  height: '150px',
+  width: '100%',
+  height: '300px',
   background: theme.colors.purpleHighlight,
   color: theme.colors.lightGray,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  borderRadius: '16px',
   flexShrink: 0,
 });
 
