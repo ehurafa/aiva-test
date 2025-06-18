@@ -29,7 +29,6 @@ export const Header: React.FC = () => {
         </NavMenu>
 
          <NavIcons>
-          <FaHeart title="Favoritos" size={20} />
           <FaShoppingCart title="Carrinho" size={20} /> <NavIconsCounter>{cart.length}</NavIconsCounter>
           <Link to="/dashboard">
             <FaUser title="Minha Conta" size={20} />
