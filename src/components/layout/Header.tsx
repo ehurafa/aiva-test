@@ -1,13 +1,15 @@
 import React, { useState  } from 'react'
-import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, HamburgerButton, MenuWrapper, HeaderContent, NavIconsCounter } from './Header.styles'
+import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, HamburgerButton, MenuWrapper, HeaderContent, NavIconsCounter, HeaderUser } from './Header.styles'
 import { useCartAndFavoritesStore } from '../../store/useCartAndFavoritesStore'
 import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa'
+import { useUserStore } from "../../store/userStore"
 
 export const Header: React.FC = () => {
 
+  const { user, logout } = useUserStore()
   const { cart } = useCartAndFavoritesStore()
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <HeaderContainer>
@@ -30,6 +32,15 @@ export const Header: React.FC = () => {
           <FaShoppingCart title="Carrinho" size={20} /> <NavIconsCounter>{cart.length}</NavIconsCounter>
           <FaUser title="Minha Conta" size={20} />
         </NavIcons>
+
+        {user ? (
+          <HeaderUser>
+              <span>Olá, {user.name}!</span>
+              <button onClick={logout}>Sair</button>
+            </HeaderUser>
+          ) : (
+            <a href="/login">Login</a>
+          )}
 
         <HamburgerButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
           ☰

@@ -119,3 +119,8 @@ export const NavIcons = styled('div', {
 export const NavIconsCounter = styled('span', {
  fontSize: '11px'
 });
+
+export const HeaderUser = styled('div', {
+ fontSize: '11px',
+ marginLeft: '10px',
+});
