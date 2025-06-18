@@ -4,7 +4,7 @@ import { Home } from "../pages/Home"
 import { Category } from "../pages/Category"
 import { ProductDetails } from "../pages/ProductDetails"
 import { Login } from "../pages/Login"
-import { Register } from "../pages/Register"
+import { UserDashboard } from "../pages/UserDashboard"
 
 export default function AppRouter() {
   return (
@@ -17,7 +17,7 @@ export default function AppRouter() {
         </Route>
 
         <Route path="/login" element={<Login />} />
-        <Route path="/registrar" element={<Register />} />
+        <Route path="/dashboard" element={<UserDashboard />} />
       </Routes>
     </BrowserRouter>
   );

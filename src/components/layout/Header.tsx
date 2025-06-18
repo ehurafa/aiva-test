@@ -3,6 +3,7 @@ import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, Hamburg
 import { useCartAndFavoritesStore } from '../../store/useCartAndFavoritesStore'
 import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa'
 import { useUserStore } from "../../store/userStore"
+import { Link } from 'react-router-dom'
 
 export const Header: React.FC = () => {
 
@@ -30,7 +31,9 @@ export const Header: React.FC = () => {
          <NavIcons>
           <FaHeart title="Favoritos" size={20} />
           <FaShoppingCart title="Carrinho" size={20} /> <NavIconsCounter>{cart.length}</NavIconsCounter>
-          <FaUser title="Minha Conta" size={20} />
+          <Link to="/dashboard">
+            <FaUser title="Minha Conta" size={20} />
+          </Link>
         </NavIcons>
 
         {user ? (
