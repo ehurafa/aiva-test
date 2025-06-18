@@ -5,12 +5,14 @@ import { Container, ProductGrid } from './Category.styles'
 import ProductCard from '../components/ProductCard'
 
 export const Category = () => {
-  const { categoryId } = useParams<{ category: string }>();
+  const { categoryId } = useParams<{ categoryId: string }>();
   const { products, setCategory } = useProductStore();
 
   useEffect(() => {
-    setCategory(categoryId);
-  }, [categoryId, setCategory]);
+    if (categoryId) {
+      setCategory(categoryId)
+    }
+  }, [categoryId, setCategory])
 
   return (
     <Container>
