@@ -13,7 +13,7 @@ import {
   HeaderUser,
 } from './Header.styles'
 import { useCartAndFavoritesStore } from '../../store/useCartAndFavoritesStore'
-import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa'
+import { FaShoppingCart, FaUser } from 'react-icons/fa'
 import { useUserStore } from '../../store/userStore'
 import { Link } from 'react-router-dom'
 
@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
 
       <MenuWrapper>
         <NavMenu>
-          <NavLink href="/category/1">Clothes</NavLink>
+          <NavLink href="/category/1" data-testid="category-link">Clothes</NavLink>
           <NavLink href="/category/2">Electronics</NavLink>
           <NavLink href="/category/4">Shoes</NavLink>
           <NavLink href="/category/5">Miscellaneous</NavLink>

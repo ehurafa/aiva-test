@@ -21,6 +21,7 @@ export const Category = () => {
         {products.length > 0 ? (
           products.map((product) => (
             <ProductCard
+              data-testid="product-card"
               key={product.id}
               product={{
                 id: product.id,
