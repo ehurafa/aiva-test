@@ -164,36 +164,32 @@ cypress/              # Testes E2E com Cypress
 
 ```mermaid
 flowchart TD
-    A[Inicio do App] --> B{Usuario esta logado?}
-    B -- Nao --> C[Ir para pagina de Login/Registro]
-    C --> D[Faz login ou cria conta]
-    D --> E{Login bem-sucedido?}
-    E -- Nao --> C
-    E -- Sim --> F[Redireciona para Home]
+    A[Inicio do App] --> B[Redireciona para Home]
+    B --> C[Visualiza produtos por categoria]
+    C --> D{Seleciona um produto?}
+    D -- Sim --> E[Ver detalhes do produto]
+    D -- Não --> F{Navegar pelas categorias?}
+    F -- Sim --> E
+    F -- Não --> B
 
-    B -- Sim --> F[Redireciona para Home]
+    B --> G{Clicar em Novo Produto?}
+    G -- Sim --> E
 
-    F --> G[Visualiza produtos por categoria]
-    G --> H{Seleciona um produto?}
-    H -- Sim --> I[Ver detalhes do produto]
-    I --> J{Adicionar ao carrinho?}
-    J -- Sim --> K[Item adicionado ao carrinho]
-    J -- Nao --> G
+    E --> H{Adicionar ao carrinho?}
+    H -- Sim --> I[Item adicionado ao carrinho]
+    H -- Não --> J{Favoritar produto?}
+    J -- Sim --> K[Produto favoritado]
+    J -- Não --> C
 
-    K --> L{Ir para o carrinho?}
-    L -- Sim --> M[Visualiza carrinho]
-    M --> N{Ir para checkout?}
-    N -- Sim --> O[Checkout futuramente]
-    N -- Nao --> F
+    I --> B
+    K --> B
 
-    L -- Nao --> F
-
-    F --> P{Eh admin?}
-    P -- Sim --> Q[Acessa dashboard admin]
-    Q --> R[Faz operacoes CRUD]
-    R --> F
-
-    P -- Nao --> F
-
+    A --> L{Quer registrar ou fazer login?}
+    L -- Sim --> M[Ir para página de Login/Registro]
+    M --> N[Faz login ou cria conta]
+    N --> O{Login bem-sucedido?}
+    O -- Não --> M
+    O -- Sim --> B
+    L -- Não --> B
 
 ```
