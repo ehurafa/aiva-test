@@ -1,12 +1,23 @@
-import React, { useState  } from 'react'
-import { HeaderContainer, Logo, SearchInput, NavIcons, NavMenu, NavLink, HamburgerButton, MenuWrapper, HeaderContent, NavIconsCounter, HeaderUser } from './Header.styles'
+import React, { useState } from 'react'
+import {
+  HeaderContainer,
+  Logo,
+  SearchInput,
+  NavIcons,
+  NavMenu,
+  NavLink,
+  HamburgerButton,
+  MenuWrapper,
+  HeaderContent,
+  NavIconsCounter,
+  HeaderUser,
+} from './Header.styles'
 import { useCartAndFavoritesStore } from '../../store/useCartAndFavoritesStore'
 import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa'
-import { useUserStore } from "../../store/userStore"
+import { useUserStore } from '../../store/userStore'
 import { Link } from 'react-router-dom'
 
 export const Header: React.FC = () => {
-
   const { user, logout } = useUserStore()
   const { cart } = useCartAndFavoritesStore()
 
@@ -16,8 +27,8 @@ export const Header: React.FC = () => {
     <HeaderContainer>
       <HeaderContent>
         <Logo href="/">Aiva Shop</Logo>
-        <SearchInput type="text" placeholder="Buscar produtos..." />      
-      </HeaderContent>      
+        <SearchInput type="text" placeholder="Buscar produtos..." />
+      </HeaderContent>
 
       <MenuWrapper>
         <NavMenu>
@@ -28,8 +39,9 @@ export const Header: React.FC = () => {
           <NavLink href="/category/22">Figura</NavLink>
         </NavMenu>
 
-         <NavIcons>
-          <FaShoppingCart title="Carrinho" size={20} /> <NavIconsCounter>{cart.length}</NavIconsCounter>
+        <NavIcons>
+          <FaShoppingCart title="Carrinho" size={20} />{' '}
+          <NavIconsCounter>{cart.length}</NavIconsCounter>
           <Link to="/dashboard">
             <FaUser title="Minha Conta" size={20} />
           </Link>
@@ -50,7 +62,6 @@ export const Header: React.FC = () => {
           ☰
         </HamburgerButton>
       </MenuWrapper>
-
     </HeaderContainer>
   )
 }

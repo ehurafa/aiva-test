@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout } from "../components/layout/Layout"
-import { Home } from "../pages/Home"
-import { Category } from "../pages/Category"
-import { ProductDetails } from "../pages/ProductDetails"
-import { Login } from "../pages/Login"
-import { UserDashboard } from "../pages/UserDashboard"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Layout } from '../components/layout/Layout'
+import { Home } from '../pages/Home'
+import { Category } from '../pages/Category'
+import { ProductDetails } from '../pages/ProductDetails'
+import { Login } from '../pages/Login'
+import { UserDashboard } from '../pages/UserDashboard'
 
 export default function AppRouter() {
   return (
@@ -20,5 +20,5 @@ export default function AppRouter() {
         <Route path="/dashboard" element={<UserDashboard />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }

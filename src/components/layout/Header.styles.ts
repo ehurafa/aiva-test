@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '@stitches/react'
 import { theme } from '../../styles/stitches.config'
 
 export const HeaderContainer = styled('header', {
@@ -15,21 +15,21 @@ export const HeaderContainer = styled('header', {
     height: 'auto',
     padding: '8px',
   },
-});
+})
 
 export const HeaderContent = styled('div', {
   width: '100%',
   justifyContent: 'space-between',
   display: 'flex',
-  alignItems: 'center' 
-});
+  alignItems: 'center',
+})
 
 export const MenuWrapper = styled('div', {
   width: '100%',
   display: 'flex',
   padding: '12px 0 4px 0',
   justifyContent: 'space-between',
-});
+})
 
 export const NavMenu = styled('nav', {
   width: '100%',
@@ -41,9 +41,9 @@ export const NavMenu = styled('nav', {
     flexDirection: 'column',
     gap: '0.5rem',
     marginLeft: '0',
-    display: 'none'
+    display: 'none',
   },
-});
+})
 
 export const NavLink = styled('a', {
   textDecoration: 'none',
@@ -56,7 +56,7 @@ export const NavLink = styled('a', {
   '@media (max-width: 768px)': {
     fontSize: '0.9rem',
   },
-});
+})
 
 export const HamburgerButton = styled('button', {
   display: 'none',
@@ -69,7 +69,7 @@ export const HamburgerButton = styled('button', {
   '@media (max-width: 768px)': {
     display: 'block',
   },
-});
+})
 
 export const Logo = styled('a', {
   fontSize: '24px',
@@ -82,7 +82,7 @@ export const Logo = styled('a', {
   '@media (min-width: 768px)': {
     marginBottom: '0',
   },
-});
+})
 
 export const SearchInput = styled('input', {
   flex: 1,
@@ -97,8 +97,7 @@ export const SearchInput = styled('input', {
   '&::placeholder': {
     color: theme.colors.purpleHighlight,
   },
-
-});
+})
 
 export const NavIcons = styled('div', {
   display: 'flex',
@@ -110,9 +109,9 @@ export const NavIcons = styled('div', {
       color: theme.colors.neonGreen,
     },
   },
-    a: {
+  a: {
     color: 'white',
-      '&:hover': {
+    '&:hover': {
       color: theme.colors.neonGreen,
     },
   },
@@ -121,20 +120,20 @@ export const NavIcons = styled('div', {
     justifyContent: 'center',
     gap: '12px',
   },
-});
+})
 
 export const NavIconsCounter = styled('span', {
- fontSize: '11px'
-});
+  fontSize: '11px',
+})
 
 export const HeaderUser = styled('div', {
- fontSize: '11px',
- marginLeft: '10px',
+  fontSize: '11px',
+  marginLeft: '10px',
 
   a: {
-  color: 'white',
+    color: 'white',
     '&:hover': {
-    color: theme.colors.neonGreen,
+      color: theme.colors.neonGreen,
+    },
   },
-},
-});
+})

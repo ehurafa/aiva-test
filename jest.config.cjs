@@ -6,4 +6,8 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|scss|sass)$': 'identity-obj-proxy',
   },
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
 }

@@ -1,4 +1,5 @@
 ## Fluxograma
+
 ```mermaid
 flowchart TD
     A[Inicio do App] --> B{Usuario esta logado?}

@@ -1,6 +1,5 @@
-
-import { styled } from '@stitches/react';
-import { theme } from '../styles/stitches.config';
+import { styled } from '@stitches/react'
+import { theme } from '../styles/stitches.config'
 
 export const Container = styled('main', {
   padding: '16px',

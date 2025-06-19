@@ -14,7 +14,7 @@ export const Container = styled('footer', {
   '@media (max-width: 768px)': {
     padding: '12px',
   },
-});
+})
 
 export const Copyright = styled('div', {
   fontSize: '14px',

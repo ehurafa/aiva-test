@@ -1,9 +1,16 @@
 import { FC, useEffect } from 'react'
 import { useProductStore } from '../store/useProductStore'
-import { Container, BannerSection, BannerItem, SectionTitle, ProductsGrid, ProductError } from './Home.styles'
+import {
+  Container,
+  BannerSection,
+  BannerItem,
+  SectionTitle,
+  ProductsGrid,
+  ProductError,
+} from './Home.styles'
 import ProductCard from '../components/ProductCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css';
+import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
@@ -53,19 +60,15 @@ export const Home: FC = () => {
         {!isLoading && !error && (
           <ProductsGrid>
             {products.map((product) => (
-    
               <ProductCard
                 key={product.id}
-                product={
-                  {
-                    id: product.id,
-                    title: product.title,
-                    price: product.price,
-                    images: product.images,
-                  }
-              }>
-              </ProductCard>
-
+                product={{
+                  id: product.id,
+                  title: product.title,
+                  price: product.price,
+                  images: product.images,
+                }}
+              ></ProductCard>
             ))}
           </ProductsGrid>
         )}

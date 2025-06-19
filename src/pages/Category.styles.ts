@@ -1,4 +1,4 @@
-import { styled } from '../styles/stitches.config';
+import { styled } from '../styles/stitches.config'
 
 export const Container = styled('div', {
   padding: '1rem',
@@ -6,7 +6,7 @@ export const Container = styled('div', {
     fontSize: '2rem',
     marginBottom: '1rem',
   },
-});
+})
 
 export const ProductGrid = styled('div', {
   display: 'grid',
@@ -16,4 +16,4 @@ export const ProductGrid = styled('div', {
   '@media (max-width: 768px)': {
     gridTemplateColumns: '1fr',
   },
-});
+})

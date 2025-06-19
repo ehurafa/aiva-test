@@ -1,14 +1,14 @@
-import React, { ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Container, Grid, Detail, CategoryHeader } from './Content.styles';
+import React, { ReactNode } from 'react'
+import { useLocation } from 'react-router-dom'
+import { Container, Grid, Detail, CategoryHeader } from './Content.styles'
 
 interface ContentProps {
-  className?: string;
-  children?: ReactNode;
+  className?: string
+  children?: ReactNode
 }
 
 export const Content: React.FC<ContentProps> = ({ className, children }) => {
-  const location = useLocation();
+  const location = useLocation()
 
   if (location.pathname === '/detalhes') {
     return (
@@ -17,7 +17,7 @@ export const Content: React.FC<ContentProps> = ({ className, children }) => {
           <h1>Detalhes do Produto</h1>
         </Detail>
       </Container>
-    );
+    )
   }
 
   if (location.pathname.startsWith('/categoria')) {
@@ -28,12 +28,12 @@ export const Content: React.FC<ContentProps> = ({ className, children }) => {
         </CategoryHeader>
         <Grid>produtos</Grid>
       </Container>
-    );
+    )
   }
 
   return (
     <Container className={className} data-testid="content-container">
       <Grid>{children || 'produtos'}</Grid>
     </Container>
-  );
-};
+  )
+}

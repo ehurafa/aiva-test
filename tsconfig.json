@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ESNext",
     "module": "ESNext",
     "strict": true,
@@ -8,7 +9,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -18,6 +20,9 @@
     "allowJs": false,
     "types": ["jest", "@testing-library/jest-dom"],
     "typeRoots": ["./node_modules/@types"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

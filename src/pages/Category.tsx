@@ -5,8 +5,8 @@ import { Container, ProductGrid } from './Category.styles'
 import ProductCard from '../components/ProductCard'
 
 export const Category = () => {
-  const { categoryId } = useParams<{ categoryId: string }>();
-  const { products, setCategory } = useProductStore();
+  const { categoryId } = useParams<{ categoryId: string }>()
+  const { products, setCategory } = useProductStore()
 
   useEffect(() => {
     if (categoryId) {
@@ -20,22 +20,20 @@ export const Category = () => {
       <ProductGrid>
         {products.length > 0 ? (
           products.map((product) => (
-           <ProductCard
-                key={product.id}
-                product={
-                  {
-                    id: product.id,
-                    title: product.title,
-                    price: product.price,
-                    images: product.images,
-                  }
-              }>
-              </ProductCard>
+            <ProductCard
+              key={product.id}
+              product={{
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                images: product.images,
+              }}
+            ></ProductCard>
           ))
         ) : (
           <p>No products available.</p>
         )}
       </ProductGrid>
     </Container>
-  );
+  )
 }
