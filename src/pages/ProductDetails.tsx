@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProductStore } from '../store/useProductStore'
 import { useCartAndFavoritesStore } from '../store/useCartAndFavoritesStore'
+import { Button } from '../components/Button'
 import {
   Container,
   Image,
@@ -9,7 +10,6 @@ import {
   Title,
   Price,
   Description,
-  Button,
 } from './ProductDetails.styles'
 
 export const ProductDetails: FC = () => {
@@ -39,6 +39,9 @@ export const ProductDetails: FC = () => {
         <Price>R$ {product.price.toFixed(2)}</Price>
         <Description>{product.description}</Description>
         <Button
+          mode="button"
+          size="large"
+          variant="primary"
           onClick={() => {
             handleAddToCart()
           }}

@@ -16,6 +16,7 @@ import { useCartAndFavoritesStore } from '../../store/useCartAndFavoritesStore'
 import { FaShoppingCart, FaUser } from 'react-icons/fa'
 import { useUserStore } from '../../store/userStore'
 import { Link } from 'react-router-dom'
+import { Button } from '../Button'
 
 export const Header: React.FC = () => {
   const { user, logout } = useUserStore()
@@ -51,10 +52,18 @@ export const Header: React.FC = () => {
           {user ? (
             <>
               <span>Olá, {user.name}!</span>
-              <button onClick={logout}>Sair</button>
+              <Button
+                variant="secondary"
+                size="small"
+                mode="button"
+                onClick={logout}
+              >Sair</Button>
             </>
           ) : (
-            <a href="/login">Login</a>
+            
+            <Button variant="secondary" size="small" mode="link">
+              <a href="/login">Login</a>
+            </Button>
           )}
         </HeaderUser>
 

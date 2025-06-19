@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useCartAndFavoritesStore } from '../store/useCartAndFavoritesStore'
 import type { Product } from '../types/Product'
+import { Button } from '../components/Button'
 import {
   Card,
   Image,
   Title,
   Price,
   Actions,
-  Button,
   CardLink,
 } from './ProductCard.styles'
 
@@ -48,7 +48,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <Actions>
         {showFavorite && (
           <Button
-            variant={isFavorite ? 'favoriteActive' : 'favorite'}
+            state={isFavorite ? 'active' : undefined}
+            variant="primary"
+            size="medium"
+            mode="button"
             onClick={() =>
               isFavorite
                 ? removeFromFavorites(product.id)
@@ -60,7 +63,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
         )}
 
         {showAddToCart && (
-          <Button variant="cart" onClick={() => handleAddToCart()}>
+          <Button
+            variant="primary"
+            size="medium"
+            mode="button"
+            onClick={() => handleAddToCart()}
+          >
             Adicionar ao Carrinho
           </Button>
         )}

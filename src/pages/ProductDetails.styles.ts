@@ -40,19 +40,3 @@ export const Price = styled('p', {
 export const Description = styled('p', {
   lineHeight: 1.6,
 })
-
-export const Button = styled('button', {
-  padding: '0.75rem 1.5rem',
-  fontSize: '0.8rem',
-  border: 'none',
-  borderRadius: '8px',
-  cursor: 'pointer',
-
-  '&:hover': {
-    color: theme.colors.purpleHighlight,
-  },
-
-  '&:active': {
-    color: theme.colors.purpleHighlight,
-  },
-})

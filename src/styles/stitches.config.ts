@@ -9,6 +9,7 @@ export const { styled, css, theme, globalCss } = createStitches({
       lightGray: '#E6E9EC',
       purpleHighlight: '#820AD1CC',
       error: '#ff0000',
+      white: 'white',
     },
     fonts: {
       primary: 'Inter, sans-serif',
@@ -20,7 +21,7 @@ export const globalStyles = globalCss({
   '*': { margin: 0, padding: 0, boxSizing: 'border-box' },
   body: {
     fontFamily: '$primary',
-    backgroundColor: 'white',
+    backgroundColor: '$white',
     color: '$softBlack',
   },
 })

@@ -58,29 +58,3 @@ export const Actions = styled('div', {
   justifyContent: 'center',
   width: '100%',
 })
-
-export const Button = styled('button', {
-  padding: '4px 8px',
-  borderRadius: '10px',
-  fontSize: '10px',
-  fontWeight: 'bold',
-  cursor: 'pointer',
-  transition: 'background-color 0.2s ease',
-  variants: {
-    variant: {
-      favorite: {
-        '&:hover': {
-          backgroundColor: theme.colors.neonGreen,
-        },
-      },
-      favoriteActive: {
-        backgroundColor: theme.colors.neonGreen,
-      },
-      cart: {
-        '&:hover': {
-          backgroundColor: theme.colors.neonGreen,
-        },
-      },
-    },
-  },
-})
